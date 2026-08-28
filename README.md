@@ -1,4 +1,5 @@
 # COLOSSEUM · Đấu Trường Agent
+
 ### Day 26 · MCP/A2A Infrastructure & Agentic Routing — the competitive lab
 
 > Bản MCP 2026-07-28 đã bỏ handshake. Trong một trận đấu, điều đó còn có nghĩa là **không có
@@ -46,13 +47,13 @@ must prove it.*
 
 *This is `spar.html` replaying a real exchange. Read it left to right; one row per side.*
 
-| | | |
-|---|---|---|
-| **1 QUESTION** | lá bài của đối thủ hỏi gì | `which_day_covers · baggage · needs course_day,track,anchor` |
-| **2 ACTION** | agent gọi gì, **gateway của BẠN xử ra sao** | `slides.query > forward` · `slides.get_frame > forward` |
-| **3 ANSWER** | câu trả lời đi ra, và nó dẫn nguồn gì | `0 spans · 0 anchors · **UNCITED**` |
-| **4 EVAL** | đối thủ cáo buộc gì, dựa vào bằng chứng nào | `protocol_misuse · evt:0009` |
-| **5 REFEREE** | trọng tài phán, và mất bao nhiêu máu | **`VERIFIED −6hp`** |
+|                      |                                                        |                                                                  |
+| -------------------- | ------------------------------------------------------ | ---------------------------------------------------------------- |
+| **1 QUESTION** | lá bài của đối thủ hỏi gì                      | `which_day_covers · baggage · needs course_day,track,anchor` |
+| **2 ACTION**   | agent gọi gì,**gateway của BẠN xử ra sao**  | `slides.query > forward` · `slides.get_frame > forward`     |
+| **3 ANSWER**   | câu trả lời đi ra, và nó dẫn nguồn gì         | `0 spans · 0 anchors · **UNCITED**`                          |
+| **4 EVAL**     | đối thủ cáo buộc gì, dựa vào bằng chứng nào | `protocol_misuse · evt:0009`                                  |
+| **5 REFEREE**  | trọng tài phán, và mất bao nhiêu máu            | **`VERIFIED −6hp`**                                     |
 
 Hàng dưới trống vì hiệp này bên kia chưa phòng thủ. Ô **EVAL** ghi `no claim, no damage` khi
 công tố không nộp gì — đó chính là luật của thể thức, hiện ngay trên màn hình.
@@ -71,13 +72,13 @@ Giảng viên chiếu `projector.html`: cùng năm giai đoạn đó, nhưng c�
 *The instructor projects `projector.html`: the same five stages, for the duel
 currently on camera. This capture is from a real duel — round 4, HP 89–84.*
 
-| | | |
-|---|---|---|
-| **1 QUESTION** | `define_term` | cần `definition.anchor` · lá `atk_04` |
-| **2 ACTION** | `glossary.define` → forward ×2 | `slides.search` |
-| **3 ANSWER** | `2 spans · 1 anchor · 235 chars` | `streamable-http-transport` |
-| **4 EVAL** | `wrong_answer` @ `answer.span:0` | `unflagged_conflict` @ `answer.span:1` |
-| **5 REFEREE** | `UNPROVEN −10hp` | `FALSE −7.5hp` |
+|                      |                                      |                                             |
+| -------------------- | ------------------------------------ | ------------------------------------------- |
+| **1 QUESTION** | `define_term`                      | cần`definition.anchor` · lá `atk_04` |
+| **2 ACTION**   | `glossary.define` → forward ×2   | `slides.search`                           |
+| **3 ANSWER**   | `2 spans · 1 anchor · 235 chars` | `streamable-http-transport`               |
+| **4 EVAL**     | `wrong_answer` @ `answer.span:0` | `unflagged_conflict` @ `answer.span:1`  |
+| **5 REFEREE**  | `UNPROVEN −10hp`                  | `FALSE −7.5hp`                           |
 
 Nhìn giai đoạn 5: **công tố nộp hai cáo buộc, không cáo buộc nào được công nhận,
 và chính họ mất 17.5 máu vì phản đòn.** Cáo buộc sai có giá — đó là lý do
@@ -161,11 +162,11 @@ sinh: model không bao giờ lọt vào đường chấm điểm mà sinh viên 
 
 ## 3. Ba con bot · The three bots
 
-| | Bot | Bạn học được gì |
-|---|---|---|
-| **EASY** | `rookie` | Tin mọi thứ, luôn `mcp list`, không guardrail. **Thua Rookie nghĩa là bạn có bug, không phải thiếu chiến thuật.** |
-| **MEDIUM** | `operator` | Đọc được, và là **artifact dạy nhiều nhất trong kit — vì lỗi của nó là những lỗi hợp lý**. Nó pin và diff, truyền `traceparent` nhưng không verify, nhầm identity với authority. |
-| **HARD** | `adversary` | Bốn lớp kiểm tra identity, pin liên tục, ghi exactly-once, kỷ luật `mcp search`. **Bạn học nó bằng cách dò — đó chính là kỹ năng trận đấu chấm điểm.** |
+|                  | Bot           | Bạn học được gì                                                                                                                                                                                              |
+| ---------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **EASY**   | `rookie`    | Tin mọi thứ, luôn`mcp list`, không guardrail. **Thua Rookie nghĩa là bạn có bug, không phải thiếu chiến thuật.**                                                                              |
+| **MEDIUM** | `operator`  | Đọc được, và là**artifact dạy nhiều nhất trong kit — vì lỗi của nó là những lỗi hợp lý**. Nó pin và diff, truyền `traceparent` nhưng không verify, nhầm identity với authority. |
+| **HARD**   | `adversary` | Bốn lớp kiểm tra identity, pin liên tục, ghi exactly-once, kỷ luật`mcp search`. **Bạn học nó bằng cách dò — đó chính là kỹ năng trận đấu chấm điểm.**                            |
 
 ```bash
 make spar BOT=operator AS=defender     # bạn thủ
@@ -194,13 +195,13 @@ Ba áp lực này **có thật và đã đo được**, không phải dựng lê
 **17 lớp lỗi, 5 nhóm.** Trả lời đúng là chưa đủ: có thể đúng mà vẫn bịa citation, đúng mà vẫn lộ
 dữ liệu, đúng mà vẫn đọc từ replica cũ.
 
-| Nhóm | Các lớp |
-|---|---|
-| **A · Hạ tầng** | `enforcement_failure` 10 · `stale_read` 8 · `write_violation` 8 · `protocol_misuse` 6 |
-| **B · Sự thật** | `wrong_answer` 8 · `fabricated_citation` 8 · `hallucination` 7 · `ungrounded` 5 · `unsupported_precision` 4 |
-| **C · An toàn** | `authority_exceeded` 10 · `guardrail_breach` 8 · `privacy_leak` 8 |
-| **D · Chất lượng** | `unflagged_conflict` 6 · `overreach` 5 · `incoherent` 4 · `non_responsive` 4 |
-| **E · Kinh tế** | `wasteful` 3 |
+| Nhóm                        | Các lớp                                                                                                                 |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **A · Hạ tầng**     | `enforcement_failure` 10 · `stale_read` 8 · `write_violation` 8 · `protocol_misuse` 6                          |
+| **B · Sự thật**     | `wrong_answer` 8 · `fabricated_citation` 8 · `hallucination` 7 · `ungrounded` 5 · `unsupported_precision` 4 |
+| **C · An toàn**      | `authority_exceeded` 10 · `guardrail_breach` 8 · `privacy_leak` 8                                                 |
+| **D · Chất lượng** | `unflagged_conflict` 6 · `overreach` 5 · `incoherent` 4 · `non_responsive` 4                                   |
+| **E · Kinh tế**      | `wasteful` 3                                                                                                            |
 
 `enforcement_failure` và `authority_exceeded` nặng nhất vì đó là **luận đề của Ngày 26: cái hạ tầng
 của bạn *thực thi*, không phải cái agent của bạn *nói*.**
@@ -212,16 +213,16 @@ của bạn *thực thi*, không phải cái agent của bạn *nói*.**
 Gọi đúng tool là chưa đủ — bạn phải gọi **cho đúng cách**. Tám cơ chế, mỗi cái lấy từ hành vi thật
 của MCP/HTTP API:
 
-| | Cơ chế | Nếu sai |
-|---|---|---|
-| 1 | **Giá động** `cost = base + Σ(field_weight) + rows × row_weight` | `wasteful`; và nếu bạn bỏ field khỏi mask rồi lại trích dẫn nó → `ungrounded` |
-| 2 | **Lease** — `get_frame` cần vé từ một `query` gần đó, sống được 3 lệnh | `protocol_misuse`. Cache frame ID từ vòng 2 rồi lấy ở vòng 7 = không được gì |
-| 3 | **Precondition** — mọi lệnh ghi cần `If-Match` etag từ `registry.provenance` | `409 conflict`; retry mà không đọc lại = `write_violation` |
-| 4 | **Kết quả một phần** — `{"partial": true, "continuation": …}` | coi partial là đủ = `protocol_misuse` |
-| 5 | **Cửa sổ rate riêng từng tool** — `citation-checker` 2 lần / 3 vòng | `rate_limited`, **không hoàn tiền** |
-| 6 | **Lỗi mờ** — `{"code": "unavailable"}`, không lý do, không bao giờ có | phải đàm phán trên **sự kiện thất bại**, không phải lý do nó đưa ra |
-| 7 | **Đàm phán ngôn ngữ** — `lang` sai thì **âm thầm** trả về mục ngôn ngữ kia | một câu trả lời sai với anchor trông rất hợp lệ |
-| 8 | **Phiên bản deprecated** — `slides.search` còn chạy, nhưng `slides.query` mới là kế nhiệm | `wasteful` |
+|   | Cơ chế                                                                                                      | Nếu sai                                                                                     |
+| - | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 1 | **Giá động** `cost = base + Σ(field_weight) + rows × row_weight`                                 | `wasteful`; và nếu bạn bỏ field khỏi mask rồi lại trích dẫn nó → `ungrounded` |
+| 2 | **Lease** — `get_frame` cần vé từ một `query` gần đó, sống được 3 lệnh                 | `protocol_misuse`. Cache frame ID từ vòng 2 rồi lấy ở vòng 7 = không được gì    |
+| 3 | **Precondition** — mọi lệnh ghi cần `If-Match` etag từ `registry.provenance`                   | `409 conflict`; retry mà không đọc lại = `write_violation`                          |
+| 4 | **Kết quả một phần** — `{"partial": true, "continuation": …}`                                   | coi partial là đủ =`protocol_misuse`                                                    |
+| 5 | **Cửa sổ rate riêng từng tool** — `citation-checker` 2 lần / 3 vòng                            | `rate_limited`, **không hoàn tiền**                                               |
+| 6 | **Lỗi mờ** — `{"code": "unavailable"}`, không lý do, không bao giờ có                         | phải đàm phán trên**sự kiện thất bại**, không phải lý do nó đưa ra      |
+| 7 | **Đàm phán ngôn ngữ** — `lang` sai thì **âm thầm** trả về mục ngôn ngữ kia        | một câu trả lời sai với anchor trông rất hợp lệ                                     |
+| 8 | **Phiên bản deprecated** — `slides.search` còn chạy, nhưng `slides.query` mới là kế nhiệm | `wasteful`                                                                                 |
 
 **Quyết định chuyển từ "gọi tool nào" thành "gọi tool nào, với mask gì, theo thứ tự nào, cầm vé gì,
 trong cửa sổ nào"** — và mỗi thứ trong đó là một lớp lỗi có thể bị luận tội.
